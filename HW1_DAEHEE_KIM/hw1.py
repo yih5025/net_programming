@@ -1,1 +1,5 @@
-print('This is a hw1');
+import socket
+
+name = socket.gethostname()
+name
+

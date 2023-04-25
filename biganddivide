@@ -1,0 +1,10 @@
+num1 = int(input('1번 숫자: '))
+num2 = int(input('2번 숫지: '))
+
+
+while(num2 != 0) :
+    namuji = num1 % num2
+    num1 = num2
+    num2 = namuji
+
+print(num1)
