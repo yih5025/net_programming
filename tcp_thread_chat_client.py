@@ -9,6 +9,7 @@ def recvTask(sock):
         data = sock.recv(BUFSIZE)
         print('<- ', data.decode())
 
+
 sock = socket(AF_INET, SOCK_STREAM)
 sock.connect(('localhost', port))
 

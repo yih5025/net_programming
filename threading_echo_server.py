@@ -17,7 +17,7 @@ def echoTask(sock):
 sock = socket(AF_INET, SOCK_STREAM)
 sock.bind(('', port))
 sock.listen(5)
-
+ 
 while True:
     conn, (remotehost, remoteport) = sock.accept()
     print('connceted by ',remotehost, remoteport)

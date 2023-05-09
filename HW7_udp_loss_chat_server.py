@@ -13,7 +13,6 @@ while True:
     while True:
         data, addr = s_sock.recvfrom(BUFSIZE)
         if random.random() <= 0.5:
-            print('메세지 손실')
             continue
         else:
             s_sock.sendto(b'ack', addr)
