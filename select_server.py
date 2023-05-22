@@ -18,5 +18,13 @@ while True:
         if s == s_sock:
             c_sock, addr = s_sock.accept()
             socks.append(c_sock)
-            print('Client ({}) connected' .format())
+            print('Client ({}) connected' .format(addr))
+        else:
+            data = s.recv(BUFFER)
+            if not data:
+                s.close()
+                socks.remove(s)
+                continue
+            print('Received: ', data.decode())
+            s.send(data)
             

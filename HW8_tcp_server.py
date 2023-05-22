@@ -2,7 +2,7 @@ import socket
 import time
 import threading
 
-port = 2500
+port = 4600
 BUFSIZE = 1024
 clients = []
 
@@ -10,10 +10,9 @@ def handler(conn, addr):
     newClients(addr)
     while True:
         data = conn.recv(BUFSIZE)
-        quit(data, addr)
         if not data:
             break
-
+        quit(data, addr)
         print(time.asctime() + str(addr) + ':' + data.decode())
         allSendClients(data, addr)
 
@@ -32,15 +31,18 @@ def newClients(addr):
 def allSendClients(data, addr):
     for client in clients:
         if client != addr:
-            s_sock.send(data.encode())
+            client.send(data.encode())
 
 
 
 s_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s_sock.bind(('', port))
 s_sock.listen(5)
-s_sock.bind((''), BUFSIZE)
-conn, addr = s_sock.accept()
-
-th = threading.Thread(target=handler, args=(conn,))
-
 print('Server started')
+
+while True :
+    conn, addr = s_sock.accept()
+    th = threading.Thread(target=handler, args=(conn, addr))
+    th.daemon = True
+    th.start()
+s_sock.close()
