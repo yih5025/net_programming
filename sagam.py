@@ -1,26 +1,24 @@
 import requests
 import json
 import time
+
 # 데이터를 전송할 URL
 url = "http://1.228.201.87:8010"
-i = 0
 
 # POST 요청을 보낼 데이터
 
 
 data = {
-    'waring' : '1'
-        }
+    "warning" : "0",
+    "room" : ''
+    }
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
 while True:
     response = requests.post(url, data=json.dumps(data), headers=headers)
     # response = requests.post(url, json=data)
+    
 
-    # 응답 출력 
-     
-
-    print(response.text)
 
     # 응답 확인
     try:
