@@ -1,0 +1,23 @@
+import socket
+import random
+import select
+
+host = 'localhost'
+port = 9999
+
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind((host, port))
+server_socket.listen(5)
+
+inputs = [server_socket] # 소켓 입력을 감시할 리스트
+outputs = [] # 소켓 출력 대기 리스트
+message_queues = {} # 소켓별 메시지 큐 딕셔너리
+
+def generate_random_number():
+    return random.randint(0, 40)
+
+def generate_random_number2():
+    return random.randint(0, 100)
+
+while inputs:
+    readable, writable, exceptional = select.select(inputs, outputs, inputs)

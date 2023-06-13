@@ -11,3 +11,4 @@ payload = {'query' : 'IoT'}
 rsp = requests.get(url, params=payload)
 
 print(rsp.url)
+print(rsp.headers)
