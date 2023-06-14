@@ -15,10 +15,10 @@ sftp_remote_path = '/remote/path/20191539.zip'
 sftp_local_path = '20191539.zip'
 
 # 이메일 설정
-email_subject = '20191539.zip'
+email_subject = '네트워크 프로그래밍 기말고사'
 email_attachment_name = '20191539.zip'
 email_sender = 'yih5025@naver.com'
-email_receiver = 'daeheekim@sch.ac.kr', 'ninanooo@gmail.com'
+email_receiver = ['daeheekim@sch.ac.kr', 'ninanooo@gmail.com']
 email_password = 'your-email-password'
 
 # SSH 접속 및 작업 수행
@@ -42,8 +42,9 @@ with paramiko.Transport((ssh_host, ssh_port)) as transport:
 # 이메일 전송
 msg = MIMEMultipart()
 msg['From'] = email_sender
-msg['To'] = email_receiver
+msg['To'] = ', '.join(email_receiver)
 msg['Subject'] = email_subject
+msg.set_content('네트워크 프로그래밍 기말고사 답안 제출합니다')
 
 part = MIMEBase('application', 'octet-stream')
 part.set_payload(open(email_attachment_name, 'rb').read())
