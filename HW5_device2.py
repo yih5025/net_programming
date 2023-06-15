@@ -8,9 +8,9 @@ s.bind(('', 7777))
 s.listen(10)
 
 print('divice2 is running...')
+client, addr = s.accept()
 
 while True:
-    client, addr = s.accept()
 
     msg = client.recv(BUFSIZE)
     print(msg)

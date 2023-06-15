@@ -1,0 +1,9 @@
+Wed Jun 14 19:22:29 2023:Device1: temp=33, humid=5, lilim=119Wed Jun 14 19:23:39 2023:Device1: temp=37, humid=62, lilim=102Wed Jun 14 19:23:40 2023:Device2: heart=102, steps=5727, cal=3326Wed Jun 14 19:25:54 2023:Device2: heart=80, steps=3834, cal=1735
+Wed Jun 14 19:25:56 2023:Device1: temp=5, humid=93, lilim=102
+Thu Jun 15 23:25:16 2023:Device1: temp=17, humid=20, lilim=75
+Thu Jun 15 23:25:17 2023:Device1: temp=0, humid=45, lilim=113
+Thu Jun 15 23:25:18 2023:Device1: temp=11, humid=70, lilim=150
+Thu Jun 15 23:25:19 2023:Device2: heart=115, steps=5039, cal=1742
+Thu Jun 15 23:25:19 2023:Device2: heart=100, steps=4006, cal=3992
+Thu Jun 15 23:25:20 2023:Device1: temp=11, humid=13, lilim=131
+Thu Jun 15 23:25:20 2023:Device2: heart=71, steps=5048, cal=1932
